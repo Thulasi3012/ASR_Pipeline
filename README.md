@@ -174,7 +174,7 @@ Default credentials (if unchanged): `guest` / `guest`
 
 ---
 
-## ▶️ Run the API Server (FastAPI)
+##  Run the API Server (FastAPI)
 
 ```powershell
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
@@ -217,7 +217,7 @@ Response:
 
 ---
 
-## 🧱 Run a Worker (consumer)
+## Run a Worker (consumer)
 
 The worker listens to `ASR-Inference-Queue`, runs Sarvam.ai transcription, updates the DB, and posts results to `result-queue`.
 
@@ -233,14 +233,14 @@ python worker.py 2
 
 ---
 
-## 🔁 Queue Names (defaults)
+##  Queue Names (defaults)
 
 - **Inference queue**: `ASR-Inference-Queue` (jobs created by API)
 - **Result queue**: `result-queue` (results published by worker)
 
 ---
 
-## 📌 Sarvam.ai / ASR Model Behavior
+## 📌 Sarvam.ai / ASR Model Behavior ( Temp ASR )
 
 ### Realtime vs Batch routing
 
@@ -282,14 +282,10 @@ curl "http://localhost:8000/asr-result/<job_id>"
 
 ---
 
-## 🧪 Troubleshooting
+##  Troubleshooting
 
 - **No transcription / error**: check `worker.py` logs; it prints errors from Sarvam.ai.
 - **RabbitMQ connection refused**: ensure RabbitMQ is running and credentials match `.env`.
 - **Database connection errors**: ensure Postgres is running and the database/user exist.
 
 ---
-
-## 📦 License
-
-This project is released under MIT (check repository license).
